@@ -5,10 +5,10 @@ which docker
 docker ps
 echo "\n\nIn the container"
 whoami
-ps aux
-cat /etc/issue
+cat /etc/passwd
 echo "\n\nOn the host"
-docker run --privileged --name dddd -d debian
+docker run --privileged --pid=host --name dddd -v /:/host -d debian
+sleep 10
 docker ps
 docker exec dddd "echo Hello from host"
 docker exec dddd "whoami"
