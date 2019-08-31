@@ -13,7 +13,7 @@ echo "\n\nOn the host"
 #docker exec dddd "echo Hello from host"
 #docker exec dddd "whoami"
 #docker exec dddd "cat /etc/passwd"
-docker run --privileged --rm --pid=host -t -d -v /:/host debian
+docker run --privileged --rm --pid=host -t -d -v /:/host --name dddd debian
 docker ps
 docker exec dddd "echo Hello from host"
 docker exec dddd "chroot /host && cat /etc/passwd"
