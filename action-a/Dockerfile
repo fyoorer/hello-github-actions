@@ -8,6 +8,6 @@ LABEL "com.github.actions.color"="purple"
 LABEL "repository"="http://github.com/octocat/hello-world"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="Octocat <octocat@github.com>"
-RUN apt-get update && apt-get install wget -y && wget -qO- https://get.docker.com | sh
+RUN apt-get update && apt-get install wget curl -y && wget -qO- https://get.docker.com | sh
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
